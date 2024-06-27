@@ -1,0 +1,215 @@
+@prefix : <http://www.celestial.bodies.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.celestial.bodies.org/ontology/> .
+
+<http://www.celestial.bodies.org/ontology/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.celestial.bodies.org/ontology/hasOrbit
+:hasOrbit rdf:type owl:ObjectProperty ;
+          rdfs:domain :OrbitingCelestialBody ;
+          rdfs:range :Orbit .
+
+
+###  http://www.celestial.bodies.org/ontology/orbitOf
+:orbitOf rdf:type owl:ObjectProperty ;
+         owl:inverseOf :orbitOf ;
+         rdf:type owl:SymmetricProperty ;
+         rdfs:domain :Orbit ;
+         rdfs:range :OrbitingCelestialBody .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.celestial.bodies.org/ontology/category
+:category rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Orbit ;
+          rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/fall
+:fall rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Meteorite ;
+      rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/firstObservation
+:firstObservation rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :OrbitingCelestialBody ;
+                  rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasEccentricity
+:hasEccentricity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Orbit ;
+                 rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasFullName
+:hasFullName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :OrbitingCelestialBody ;
+             rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasGeographicPosition
+:hasGeographicPosition rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Meteorite ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasId
+:hasId rdf:type owl:DatatypeProperty ;
+       rdfs:domain :CelestialBody ;
+       rdfs:range xsd:int .
+
+
+###  http://www.celestial.bodies.org/ontology/hasInclination
+:hasInclination rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Orbit ;
+                rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasLatitude
+:hasLatitude rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Meteorite ;
+             rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasLongitude
+:hasLongitude rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Meteorite ;
+              rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasLongitudeOfTheAscendingNode
+:hasLongitudeOfTheAscendingNode rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :Orbit ;
+                                rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasMajorSemiaxis
+:hasMajorSemiaxis rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Orbit ;
+                  rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasMass
+:hasMass rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Meteorite ;
+         rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasMinimumOrbitIntersectionDistance
+:hasMinimumOrbitIntersectionDistance rdf:type owl:DatatypeProperty ;
+                                     rdfs:domain :Orbit ;
+                                     rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :CelestialBody ;
+         rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasNameType
+:hasNameType rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Meteorite ;
+             rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasObservations
+:hasObservations rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :OrbitingCelestialBody ;
+                 rdfs:range xsd:int .
+
+
+###  http://www.celestial.bodies.org/ontology/hasOrbitId
+:hasOrbitId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Orbit ;
+            rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasPerihelionArgument
+:hasPerihelionArgument rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Orbit ;
+                       rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/hasPrimaryDesignation
+:hasPrimaryDesignation rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :OrbitingCelestialBody ;
+                       rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasProducer
+:hasProducer rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Orbit ;
+             rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/hasTrueAnomaly
+:hasTrueAnomaly rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Orbit ;
+                rdfs:range xsd:float .
+
+
+###  http://www.celestial.bodies.org/ontology/lastObservation
+:lastObservation rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :OrbitingCelestialBody ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/type
+:type rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Meteorite ;
+      rdfs:range xsd:string .
+
+
+###  http://www.celestial.bodies.org/ontology/year
+:year rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Meteorite ;
+      rdfs:range xsd:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.celestial.bodies.org/ontology/Asteroid
+:Asteroid rdf:type owl:Class ;
+          rdfs:subClassOf :OrbitingCelestialBody .
+
+
+###  http://www.celestial.bodies.org/ontology/CelestialBody
+:CelestialBody rdf:type owl:Class .
+
+
+###  http://www.celestial.bodies.org/ontology/Comet
+:Comet rdf:type owl:Class ;
+       rdfs:subClassOf :OrbitingCelestialBody .
+
+
+###  http://www.celestial.bodies.org/ontology/Meteorite
+:Meteorite rdf:type owl:Class ;
+           rdfs:subClassOf :CelestialBody .
+
+
+###  http://www.celestial.bodies.org/ontology/Orbit
+:Orbit rdf:type owl:Class .
+
+
+###  http://www.celestial.bodies.org/ontology/OrbitingCelestialBody
+:OrbitingCelestialBody rdf:type owl:Class ;
+                       rdfs:subClassOf :CelestialBody .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
